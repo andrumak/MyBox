@@ -210,9 +210,10 @@ namespace MyBox
 			var secondCount = second.Count();
 			if (firstCount != secondCount) return false;
 
+			var remaining = second.ToList();
 			foreach (var x1 in first)
 			{
-				if (!second.Contains(x1)) return false;
+				if (!remaining.Remove(x1)) return false;
 			}
 
 			return true;
